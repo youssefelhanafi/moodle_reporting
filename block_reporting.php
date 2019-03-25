@@ -22,8 +22,8 @@
  * operating the computer.
  *
  * @package    block_reporting
- * @copyright  2010 Remote-Learner.net
- * @author     Olav Jordan <olav.jordan@remote-learner.ca>
+ * @copyright  2019 Youssef
+ * @author     Youssef Elhanafi <yelhanafi@ac2i.ma>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 

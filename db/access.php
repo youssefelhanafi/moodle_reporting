@@ -18,7 +18,7 @@
  * My profile block caps.
  *
  * @package    block_reporting
- * @copyright  Mark Nelson <markn@moodle.com>
+ * @copyright  2019 Youssef
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 

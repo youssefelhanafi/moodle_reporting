@@ -17,9 +17,9 @@
 /**
  * Strings for component 'block_myprofile', language 'en', branch 'MOODLE_20_STABLE'
  *
- * @package    block_myprofile
- * @copyright  2010 Remote-Learner.net
- * @author     Olav Jordan <olav.jordan@remote-learner.ca>
+ * @package    block_reporting
+ * @copyright  2019 Youssef
+ * @author     Youssef Elhanafi <yelhanafi@ac2i.ma>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
