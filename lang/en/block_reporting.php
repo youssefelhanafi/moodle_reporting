@@ -35,6 +35,7 @@ $string['headerconfig'] = 'Hello world Global Config';
 $string['descconfig'] = 'Description of ...';
 $string['labelsetbackground'] = 'Set Background';
 $string['descsetbackground'] = 'Description of  ....';
+$string['linkname'] = 'Default link name ';
 
 
 

@@ -45,7 +45,7 @@ class block_reporting extends block_base {
     }
 
     public function get_content() {
-        if ($this->content !== null) {
+        /* if ($this->content !== null) {
           return $this->content;
         }
      
@@ -61,7 +61,31 @@ class block_reporting extends block_base {
         // $this->content->text   = 'The content of our Reporting block!';
         $this->content->footer = '<h3>Footer</h3>';
      
+        return $this->content; */
+        global $COURSE;
+        global $USER;
+
+        $text = 'courseid: '.$COURSE->id.'<br>';
+        $text .= 'fullname: '.$COURSE->fullname.'<br><br>';
+
+        $text .= 'userid: '.$USER->id.'<br>';
+        $text .= 'user\'s name: '.$USER->firstname.' '.$USER->lastname.'<br><br>';
+
+        $url_site = new moodle_url('/blocks/reporting/view.php',array('blockid' => $this->instance->id,'courseid' => $COURSE->id,'global' => 'site'));
+        $url_user = new moodle_url('/blocks/reporting/view.php',array('blockid' => $this->instance->id,'courseid' => $COURSE->id,'global' => 'user'));
+        $url_course = new moodle_url('/blocks/reporting/view.php',array('blockid' => $this->instance->id,'courseid' => $COURSE->id,'global' => 'course'));
+        $url_page = new moodle_url('/blocks/reporting/view.php',array('blockid' => $this->instance->id,'courseid' => $COURSE->id,'global' => 'page'));
+
+        $footer = html_writer::link($url_site, get_string('linkname', 'block_reporting').':SITE');
+        $footer .='<br><br>'.html_writer::link($url_course, get_string('linkname', 'block_reporting').':CRSE');
+        $footer .='<br><br>'.html_writer::link($url_user, get_string('linkname', 'block_reporting').':USER');
+        $footer .='<br><br>'.html_writer::link($url_page, get_string('linkname', 'block_reporting').':PAGE'); 
+        
+        $this->content->text = $text;
+        $this->content->footer = $footer;
+
         return $this->content;
+
     } 
 
     public function specialization() {
@@ -82,6 +106,15 @@ class block_reporting extends block_base {
 
     function has_config(){
         return true;
+    }
+
+    public function html_attributes() {
+        $attributes = parent::html_attributes(); // Get default values
+        if(get_config('reporting','Set_Background') == 1)
+        {
+            $attributes['class'] .= ' block_'. $this->name(); // Append our class to class attribute
+        }
+        return $attributes;
     }
 
 }
